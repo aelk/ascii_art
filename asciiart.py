@@ -1,4 +1,5 @@
 import sys
+from colorama import Fore, Style
 from PIL import Image
 
 MAX_PIXEL_VALUE = 255;
@@ -7,7 +8,8 @@ ASCII_CHARS = "`^\",:;Il!i~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B
 def printASCIIart(asciiMatrix, col, row):
     for row in asciiMatrix:
         line = [p+p+p for p in row]
-        print("".join(line))
+        print(Fore.GREEN + "".join(line))
+    print(Style.RESET_ALL)
 
 def mapBrightnessToASCIIMatrix(brightness, col, row):
     asciiMatrix = [["" for x in range(col)] for y in range(row)] 
